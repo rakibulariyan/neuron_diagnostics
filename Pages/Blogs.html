@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Neuron Diagnostic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .blog-header h1 {
+            font-size: 2.8rem;
+            color: #022366;
+            margin-bottom: 15px;
+        }
+        
+        .blog-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        
+        .blog-posts {
+            display: grid;
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .blog-card-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card:hover .blog-card-image img {
+            transform: scale(1.05);
+        }
+        
+        .blog-card-content {
+            padding: 30px;
+        }
+        
+        .blog-category {
+            display: inline-block;
+            background: #022366;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .blog-card h2 {
+            color: #022366;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            line-height: 1.4;
+        }
+        
+        .blog-card p {
+            color: #666;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .read-more {
+            color: #022366;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s ease;
+        }
+        
+        .read-more:hover {
+            gap: 12px;
+        }
+        
+        /* Sidebar Styles */
+        .blog-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .sidebar-widget {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .widget-title {
+            color: #022366;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .widget-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #022366;
+        }
+        
+        .categories-list {
+            list-style: none;
+        }
+        
+        .categories-list li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .categories-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .categories-list a {
+            color: #555;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        
+        .categories-list a:hover {
+            color: #022366;
+        }
+        
+        .categories-list span {
+            background: #f0f5ff;
+            color: #022366;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .recent-posts-list {
+            list-style: none;
+        }
+        
+        .recent-post {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .recent-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .recent-post-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .recent-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .recent-post-content h4 {
+            color: #022366;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        
+        .recent-post-content .post-date {
+            color: #888;
+            font-size: 0.8rem;
+        }
+        
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tag {
+            background: #f0f5ff;
+            color: #022366;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background: #022366;
+            color: white;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .newsletter-form input {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            background: #022366;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background: #011a4d;
+        }
+        
+        /* Pagination */
+        .blog-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 50px;
+        }
+        
+        .pagination-btn {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #022366;
+            color: #022366;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-btn.active {
+            background: #022366;
+            color: white;
+        }
+        
+        .pagination-btn:hover:not(.active) {
+            background: #f0f5ff;
+        }
+        
+        /* Search Widget */
+        .search-form {
+            display: flex;
+            gap: 0;
+        }
+        
+        .search-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-right: none;
+            border-radius: 6px 0 0 6px;
+        }
+        
+        .search-form button {
+            background: #022366;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 0 6px 6px 0;
+            cursor: pointer;
+        }
+        
+        /* Featured Post */
+        .featured-post {
+            grid-column: 1 / -1;
+        }
+        
+        .featured-post .blog-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .featured-post .blog-card-image {
+            height: 100%;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-post .blog-card {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .blog-meta {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <!-- Blog Header -->
+        <header class="blog-header">
+            <h1>Neuron Diagnostic Blog</h1>
+            <p>Stay informed with the latest insights in healthcare, diagnostics, and wellness</p>
+        </header>
+        
+        <div class="blog-layout">
+            <!-- Main Content -->
+            <main class="blog-posts">
+                <!-- Featured Post -->
+                <article class="blog-card featured-post">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Advanced Diagnostic Technology">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">Technology</span>
+                        <h2>The Future of Diagnostic Medicine: How AI is Revolutionizing Healthcare</h2>
+                        <p>Explore how artificial intelligence and machine learning are transforming diagnostic accuracy, speeding up results, and improving patient outcomes in modern healthcare settings.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> October 15, 2024</span>
+                            <span><i class="far fa-clock"></i> 5 min read</span>
+                            <span><i class="far fa-comments"></i> 12 comments</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read Full Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Regular Posts -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Blood Test">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">Preventive Care</span>
+                        <h2>Understanding Your Blood Test Results: A Comprehensive Guide</h2>
+                        <p>Learn how to interpret common blood test markers and what they reveal about your overall health and wellness.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> October 10, 2024</span>
+                            <span><i class="far fa-clock"></i> 4 min read</span>
+                            <span><i class="far fa-comments"></i> 8 comments</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read Full Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Genetic Testing">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">Genetics</span>
+                        <h2>Genetic Testing: What You Need to Know About Hereditary Conditions</h2>
+                        <p>Discover how genetic testing can help identify hereditary risks and empower you to make informed health decisions.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> October 5, 2024</span>
+                            <span><i class="far fa-clock"></i> 6 min read</span>
+                            <span><i class="far fa-comments"></i> 15 comments</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read Full Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1585435557343-3b092031d4ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Healthy Lifestyle">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">Wellness</span>
+                        <h2>5 Essential Health Screenings Every Adult Should Consider</h2>
+                        <p>Regular health screenings are crucial for early detection and prevention. Learn which tests are recommended for different age groups.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> September 28, 2024</span>
+                            <span><i class="far fa-clock"></i> 3 min read</span>
+                            <span><i class="far fa-comments"></i> 6 comments</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read Full Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </main>
+            
+            <!-- Sidebar -->
+            <aside class="blog-sidebar">
+                <!-- Search Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Search</h3>
+                    <form class="search-form">
+                        <input type="text" placeholder="Search articles...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                
+                <!-- Categories Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Categories</h3>
+                    <ul class="categories-list">
+                        <li><a href="#">Preventive Care <span>12</span></a></li>
+                        <li><a href="#">Diagnostic Technology <span>8</span></a></li>
+                        <li><a href="#">Genetic Testing <span>6</span></a></li>
+                        <li><a href="#">Wellness <span>15</span></a></li>
+                        <li><a href="#">Medical Research <span>9</span></a></li>
+                        <li><a href="#">Patient Stories <span>7</span></a></li>
+                    </ul>
+                </div>
+                
+                <!-- Recent Posts Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Recent Posts</h3>
+                    <ul class="recent-posts-list">
+                        <li class="recent-post">
+                            <div class="recent-post-image">
+                                <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Recent Post">
+                            </div>
+                            <div class="recent-post-content">
+                                <h4>The Importance of Regular Health Check-ups</h4>
+                                <span class="post-date">Oct 12, 2024</span>
+                            </div>
+                        </li>
+                        <li class="recent-post">
+                            <div class="recent-post-image">
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Recent Post">
+                            </div>
+                            <div class="recent-post-content">
+                                <h4>Understanding Cholesterol Levels</h4>
+                                <span class="post-date">Oct 8, 2024</span>
+                            </div>
+                        </li>
+                        <li class="recent-post">
+                            <div class="recent-post-image">
+                                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Recent Post">
+                            </div>
+                            <div class="recent-post-content">
+                                <h4>Diabetes Screening: What to Expect</h4>
+                                <span class="post-date">Oct 3, 2024</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Tags Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Popular Tags</h3>
+                    <div class="tags-cloud">
+                        <a href="#" class="tag">Health</a>
+                        <a href="#" class="tag">Diagnostics</a>
+                        <a href="#" class="tag">Prevention</a>
+                        <a href="#" class="tag">Technology</a>
+                        <a href="#" class="tag">Wellness</a>
+                        <a href="#" class="tag">Screening</a>
+                        <a href="#" class="tag">Blood Tests</a>
+                        <a href="#" class="tag">Genetic</a>
+                    </div>
+                </div>
+                
+                <!-- Newsletter Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Newsletter</h3>
+                    <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">Subscribe to get the latest health insights and updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="blog-pagination">
+            <a href="#" class="pagination-btn active">1</a>
+            <a href="#" class="pagination-btn">2</a>
+            <a href="#" class="pagination-btn">3</a>
+            <a href="#" class="pagination-btn">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
