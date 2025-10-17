@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Neuron Diagnostic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .faq-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .faq-header h1 {
+            font-size: 2.5rem;
+            color: #022366;
+            margin-bottom: 15px;
+        }
+        
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            background: white;
+            border: 2px solid #022366;
+            color: #022366;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .category-btn.active {
+            background: #022366;
+            color: white;
+        }
+        
+        .faq-content {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-category {
+            display: none;
+        }
+        
+        .faq-category.active {
+            display: block;
+        }
+        
+        .faq-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 25px;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .faq-question {
+            font-size: 1.2rem;
+            color: #022366;
+            margin-bottom: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .faq-answer ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+        
+        .contact-promo {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .faq-content {
+                padding: 30px 20px;
+            }
+            
+            .faq-header h1 {
+                font-size: 2rem;
+            }
+            
+            .category-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <div class="faq-header">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about our services and procedures</p>
+        </div>
+        
+        <div class="faq-categories">
+            <button class="category-btn active" data-category="general">General</button>
+            <button class="category-btn" data-category="appointments">Appointments</button>
+            <button class="category-btn" data-category="testing">Testing</button>
+            <button class="category-btn" data-category="billing">Billing</button>
+        </div>
+        
+        <div class="faq-content">
+            <!-- General FAQs -->
+            <div class="faq-category active" id="general">
+                <div class="faq-item">
+                    <div class="faq-question">What are your operating hours?<span>+</span></div>
+                    <div class="faq-answer">
+                        <p>Our standard operating hours are:</p>
+                        <ul>
+                            <li>Monday - Friday: 7:00 AM - 8:00 PM</li>
+                            <li>Saturday: 8:00 AM - 4:00 PM</li>
+                            <li>Sunday: 9:00 AM - 1:00 PM</li>
+                            <li>Emergency services: 24/7 available</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do I need a doctor's referral for testing?<span>+</span></div>
+                    <div class="faq-answer">
+                        <p>While many tests require a physician's order, we also offer direct-to-consumer testing for certain screenings. Please contact us to determine if your desired test requires a referral.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What safety measures do you have in place?<span>+</span></div>
+                    <div class="faq-answer">
+                        <p>We follow strict safety protocols including:</p>
+                        <ul>
+                            <li>Regular facility sanitization</li>
+                            <li>Personal protective equipment for staff</li>
+                            <li>Social distancing in waiting areas</li>
+                            <li>Sterile equipment for all procedures</li>
+                            <li>Infection control compliance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Appointments FAQs -->
+            <div class="faq-category" id="appointments">
+                <div class="faq-item">
+                    <div class="faq-question">How do I schedule an appointment?<span>+</span></div>
+                    <div class="faq-answer">
+                        <p>You can schedule appointments through:</p>
+                        <ul>
+                            <li>Online booking on our website</li>
+                            <li>Phone: (555) 123-4567</li>
+                            <li>In-person at our facility</li>
+                            <li>Through your referring physician</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What is your cancellation policy?<span>+</span></div>
+                    <div class="faq-answer">
+                        <p>We require 24-hour notice for appointment cancellations. Late cancellations or no-shows may be subject to a fee. Emergency situations are considered on a case-by-case basis.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What should I bring to my appointment?<span>+</span></div>
+                    <div class="faq-answer">
+                        <p>Please bring:</p>
+                        <ul>
+                            <li>Photo identification</li>
+                            <li>Insurance card (if applicable)</li>
+                            <li>Physician referral form (if required)</li>
+                            <li>List of current medications</li>
+                            <li>Previous test results (if available)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testing FAQs -->
+            <div class="faq-category" id="testing">
+                <div class="faq-item">
+                    <div class="faq-question">How long does it take to get test results?<span>+</span></div>
+                    <div class="faq-answer">
+                        <p>Turnaround times vary by test:</p>
+                        <ul>
+                            <li>Routine tests: 24-48 hours</li>
+                            <li>Specialized tests: 3-7 days</li>
+                            <li>Genetic testing: 10-14 days</li>
+                            <li>Critical results: Communicated immediately</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How will I receive my test results?<span>+</span></div>
+                    <div class="faq-answer">
+                        <p>Results are available through:</p>
+                        <ul>
+                            <li>Our secure patient portal</li>
+                            <li>Your referring physician</li>
+                            <li>Mail or secure email (upon request)</li>
+                            <li>In-person pickup</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do I need to fast before my test?<span>+</span></div>
+                    <div class="faq-answer">
+                        <p>Fasting requirements depend on the specific test:</p>
+                        <ul>
+                            <li>Lipid panel: 12-hour fast required</li>
+                            <li>Basic metabolic panel: 8-12 hour fast recommended</li>
+                            <li>Glucose test: Fasting required as per physician instructions</li>
+                            <li>Most other tests: No fasting required</li>
+                        </ul>
+                        <p>Specific instructions will be provided when you schedule your appointment.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Billing FAQs -->
+            <div class="faq-category" id="billing">
+                <div class="faq-item">
+                    <div class="faq-question">What insurance plans do you accept?<span>+</span></div>
+                    <div class="faq-answer">
+                        <p>We accept most major insurance plans including Medicare and Medicaid. Please contact our billing department at (555) 123-4567 to verify your specific insurance coverage.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What payment methods do you accept?<span>+</span></div>
+                    <div class="faq-answer">
+                        <p>We accept:</p>
+                        <ul>
+                            <li>Cash</li>
+                            <li>Credit/Debit Cards (Visa, MasterCard, American Express)</li>
+                            <li>Personal checks</li>
+                            <li>Health savings account (HSA) cards</li>
+                            <li>Insurance payments</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer payment plans?<span>+</span></div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer flexible payment plans for patients without insurance or with high out-of-pocket costs. Please speak with our billing department to discuss available options.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-promo">
+                <h3>Still Have Questions?</h3>
+                <p>Our team is here to help. Contact us for more information.</p>
+                <p>Phone: (555) 123-4567 | Email: info@neurondiagnostic.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Category switching
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and categories
+                document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.faq-category').forEach(cat => cat.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding category
+                button.classList.add('active');
+                const categoryId = button.getAttribute('data-category');
+                document.getElementById(categoryId).classList.add('active');
+            });
+        });
+        
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = answer.style.display === 'block';
+                
+                // Close all answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.display = 'none';
+                    ans.previousElementSibling.querySelector('span').textContent = '+';
+                });
+                
+                // Toggle current answer
+                if (!isActive) {
+                    answer.style.display = 'block';
+                    question.querySelector('span').textContent = '−';
+                }
+            });
+        });
+        
+        // Show first answer by default
+        document.querySelector('.faq-answer').style.display = 'block';
+        document.querySelector('.faq-question span').textContent = '−';
+    </script>
+</body>
+</html>
