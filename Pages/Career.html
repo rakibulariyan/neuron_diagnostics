@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Neuron Diagnostic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .career-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .career-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .career-header h1 {
+            font-size: 2.8rem;
+            color: #022366;
+            margin-bottom: 15px;
+        }
+        
+        .career-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .career-intro {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .career-intro h2 {
+            color: #022366;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .career-intro p {
+            color: #555;
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: 0 auto 30px;
+        }
+        
+        .benefits-section {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #022366;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #022366;
+            margin: 15px auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: #022366;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            color: #022366;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .benefit-card p {
+            color: #666;
+        }
+        
+        .current-openings {
+            margin: 60px 0;
+        }
+        
+        .openings-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .no-openings {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .no-openings i {
+            font-size: 4rem;
+            color: #022366;
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+        
+        .no-openings h3 {
+            color: #022366;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .no-openings p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .job-alert {
+            background: #e3f2fd;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .job-alert h4 {
+            color: #022366;
+            margin-bottom: 15px;
+        }
+        
+        .subscribe-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+        
+        .subscribe-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .subscribe-form button {
+            background: #022366;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .subscribe-form button:hover {
+            background: #011a4d;
+        }
+        
+        .application-process {
+            margin: 60px 0;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .process-step {
+            flex: 0 0 22%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #022366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .process-step h3 {
+            color: #022366;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .process-step p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .culture-section {
+            background: linear-gradient(135deg, #022366 0%, #0d47a1 100%);
+            color: white;
+            padding: 80px 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .culture-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .culture-section p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .culture-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .culture-feature {
+            padding: 25px;
+        }
+        
+        .culture-feature i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .culture-feature h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .culture-feature p {
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+        
+        .contact-careers {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .contact-careers h2 {
+            color: #022366;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+        }
+        
+        .contact-item i {
+            color: #022366;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .process-steps {
+                flex-direction: column;
+            }
+            
+            .process-step {
+                flex: 0 0 100%;
+                margin-bottom: 30px;
+            }
+            
+            .subscribe-form {
+                flex-direction: column;
+            }
+            
+            .career-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .culture-section {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="career-container">
+        <!-- Career Header -->
+        <header class="career-header">
+            <h1>Join Our Team</h1>
+            <p>Build your career with Neuron Diagnostic - where precision meets compassion in healthcare</p>
+        </header>
+        
+        <!-- Career Intro -->
+        <section class="career-intro">
+            <h2>Shape the Future of Diagnostic Medicine</h2>
+            <p>At Neuron Diagnostic, we're committed to excellence in healthcare diagnostics. We're looking for passionate professionals who share our vision of providing accurate, compassionate, and innovative diagnostic services to our community.</p>
+            <p>Join us in our mission to deliver exceptional patient care through cutting-edge technology and dedicated expertise.</p>
+        </section>
+        
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <h2 class="section-title">Why Work With Us</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Healthcare Benefits</h3>
+                    <p>Comprehensive medical, dental, and vision insurance for you and your family</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Professional Development</h3>
+                    <p>Continuous learning opportunities, certifications, and career advancement programs</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Work-Life Balance</h3>
+                    <p>Flexible scheduling, paid time off, and supportive work environment</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>State-of-the-Art Facilities</h3>
+                    <p>Work with the latest diagnostic technology and equipment</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Retirement Planning</h3>
+                    <p>Competitive 401(k) plans with company matching contributions</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaborative Culture</h3>
+                    <p>Work alongside experienced professionals in a team-oriented environment</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Current Openings -->
+        <section class="current-openings">
+            <h2 class="section-title">Current Openings</h2>
+            <div class="openings-container">
+                <div class="no-openings">
+                    <i class="fas fa-search"></i>
+                    <h3>No Current Openings</h3>
+                    <p>We don't have any active job openings at the moment. Please check back later or subscribe to our job alerts to be notified when new positions become available.</p>
+                    
+                    <div class="job-alert">
+                        <h4>Get Notified About New Opportunities</h4>
+                        <p>Subscribe to receive alerts when we post new job openings</p>
+                        <form class="subscribe-form">
+                            <input type="email" placeholder="Enter your email address" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- When you have openings, you can add them like this:
+                <div class="job-listing">
+                    <h3>Medical Laboratory Technician</h3>
+                    <p><strong>Department:</strong> Laboratory</p>
+                    <p><strong>Location:</strong> Main Facility</p>
+                    <p><strong>Type:</strong> Full-time</p>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                -->
+            </div>
+        </section>
+        
+        <!-- Application Process -->
+        <section class="application-process">
+            <h2 class="section-title">Our Hiring Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Application</h3>
+                    <p>Submit your application through our portal or via email</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Review</h3>
+                    <p>Our HR team reviews your qualifications and experience</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Interview</h3>
+                    <p>Participate in interviews with department heads and HR</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Offer</h3>
+                    <p>Receive a job offer and complete onboarding process</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Culture Section -->
+        <section class="culture-section">
+            <h2>Our Work Culture</h2>
+            <p>At Neuron Diagnostic, we foster an environment of collaboration, innovation, and continuous improvement. We believe that our team is our greatest asset.</p>
+            
+            <div class="culture-features">
+                <div class="culture-feature">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Team Collaboration</h3>
+                    <p>We work together to achieve excellence in patient care</p>
+                </div>
+                
+                <div class="culture-feature">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>We encourage new ideas and approaches to diagnostic medicine</p>
+                </div>
+                
+                <div class="culture-feature">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Continuous Learning</h3>
+                    <p>We invest in our team's professional growth and development</p>
+                </div>
+                
+                <div class="culture-feature">
+                    <i class="fas fa-award"></i>
+                    <h3>Excellence</h3>
+                    <p>We strive for the highest standards in everything we do</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Careers -->
+        <section class="contact-careers">
+            <h2>Interested in Joining Our Team?</h2>
+            <p>Even if we don't have current openings, we're always interested in connecting with talented healthcare professionals.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>careers@neurondiagnostic.com</span>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(555) 123-4567</span>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Medical Drive, Health District</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Simple form submission handler
+        document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            alert(`Thank you! We'll notify you at ${email} when new positions become available.`);
+            this.querySelector('input').value = '';
+        });
+    </script>
+</body>
+</html>
