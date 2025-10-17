@@ -1,0 +1,446 @@
+/* Neuron Diagnostic Blog Page CSS */
+/* Add this to Appearance → Customize → Additional CSS */
+
+/* Main Blog Container */
+.neurond-blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Blog Header */
+.neurond-blog-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.neurond-blog-header h1 {
+    font-size: 2.8rem;
+    color: #022366;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.neurond-blog-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Blog Layout */
+.neurond-blog-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+/* Blog Posts Grid */
+.neurond-posts-grid {
+    display: grid;
+    gap: 30px;
+}
+
+/* Blog Card Styling */
+.neurond-blog-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.neurond-blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.neurond-blog-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.neurond-blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.neurond-blog-card:hover .neurond-blog-image img {
+    transform: scale(1.05);
+}
+
+.neurond-blog-content {
+    padding: 30px;
+}
+
+.neurond-blog-category {
+    display: inline-block;
+    background: #022366;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.neurond-blog-card h2 {
+    color: #022366;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.neurond-blog-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.neurond-blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.neurond-blog-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.neurond-read-more {
+    color: #022366;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s ease;
+}
+
+.neurond-read-more:hover {
+    gap: 12px;
+    color: #011a4d;
+}
+
+/* Sidebar Styling */
+.neurond-blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.neurond-sidebar-widget {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.neurond-widget-title {
+    color: #022366;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.neurond-widget-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #022366;
+}
+
+/* Categories List */
+.neurond-categories-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.neurond-categories-list li {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.neurond-categories-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.neurond-categories-list a {
+    color: #555;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.neurond-categories-list a:hover {
+    color: #022366;
+}
+
+.neurond-categories-list span {
+    background: #f0f5ff;
+    color: #022366;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Recent Posts */
+.neurond-recent-posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.neurond-recent-post {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.neurond-recent-post:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.neurond-recent-post-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.neurond-recent-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.neurond-recent-post-content h4 {
+    color: #022366;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.neurond-recent-post-content .neurond-post-date {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* Tags Cloud */
+.neurond-tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.neurond-tag {
+    background: #f0f5ff;
+    color: #022366;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.neurond-tag:hover {
+    background: #022366;
+    color: white;
+}
+
+/* Forms Styling */
+.neurond-search-form {
+    display: flex;
+    gap: 0;
+}
+
+.neurond-search-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    font-size: 1rem;
+}
+
+.neurond-search-form button {
+    background: #022366;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.neurond-search-form button:hover {
+    background: #011a4d;
+}
+
+.neurond-newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.neurond-newsletter-form input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.neurond-newsletter-form button {
+    background: #022366;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.neurond-newsletter-form button:hover {
+    background: #011a4d;
+}
+
+/* Pagination */
+.neurond-blog-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.neurond-pagination-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #022366;
+    color: #022366;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.neurond-pagination-btn.active {
+    background: #022366;
+    color: white;
+}
+
+.neurond-pagination-btn:hover:not(.active) {
+    background: #f0f5ff;
+}
+
+/* Featured Post */
+.neurond-featured-post {
+    grid-column: 1 / -1;
+}
+
+.neurond-featured-post .neurond-blog-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.neurond-featured-post .neurond-blog-image {
+    height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .neurond-blog-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .neurond-featured-post .neurond-blog-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .neurond-blog-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .neurond-blog-meta {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .neurond-blog-container {
+        padding: 20px 15px;
+    }
+}
+
+/* WordPress Core Block Overrides */
+.wp-block-latest-posts {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.wp-block-latest-posts li {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.wp-block-latest-posts li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.wp-block-categories,
+.wp-block-archives {
+    list-style: none;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.wp-block-categories li,
+.wp-block-archives li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.wp-block-categories li:last-child,
+.wp-block-archives li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
