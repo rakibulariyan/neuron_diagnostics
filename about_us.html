@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuron Diagnostic - About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #022366 0%, #0d47a1 100%);
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-section h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .hero-section .slogan {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .hero-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .values-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 60px 0;
+        }
+        
+        .value-card {
+            flex: 0 0 30%;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-card i {
+            font-size: 2.5rem;
+            color: #022366;
+            margin-bottom: 15px;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #022366;
+        }
+        
+        .value-card p {
+            color: #666;
+        }
+        
+        .services-section {
+            margin: 60px 0;
+        }
+        
+        .services-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #022366;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-item {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #022366;
+            transition: all 0.3s ease;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .service-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .mission-section {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin: 60px 0;
+        }
+        
+        .mission-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #022366;
+            text-align: center;
+        }
+        
+        .mission-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .stats-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .stat-item {
+            flex: 0 0 22%;
+            margin-bottom: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #022366;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .value-card {
+                flex: 0 0 100%;
+            }
+            
+            .stat-item {
+                flex: 0 0 45%;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-section .slogan {
+                font-size: 1.2rem;
+            }
+            
+            .mission-section {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stat-item {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1>Neuron Diagnostic</h1>
+            <div class="slogan">Your Health our priority</div>
+            <p>Neuron Diagnostic is a modern pathology and healthcare center committed to precision, compassion, and innovation. We offer a wide range of diagnostic services with state-of-the-art technology and a patient-centric approach to healthcare.</p>
+        </section>
+        
+        <!-- Values Section -->
+        <section class="values-section">
+            <div class="value-card">
+                <i class="fas fa-microscope"></i>
+                <h3>Precision</h3>
+                <p>Our advanced diagnostic equipment and expert technicians ensure accurate and reliable test results for confident medical decisions.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-heart"></i>
+                <h3>Compassion</h3>
+                <p>We treat every patient with empathy, respect, and understanding, creating a comfortable environment during their healthcare journey.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-flask"></i>
+                <h3>Innovation</h3>
+                <p>We continuously invest in cutting-edge technology and methodologies to provide the most advanced diagnostic solutions available.</p>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stat-item">
+                <div class="stat-number">50,000+</div>
+                <div class="stat-label">Tests Performed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98.5%</div>
+                <div class="stat-label">Accuracy Rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Emergency Services</div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section class="services-section">
+            <h2>Our Diagnostic Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>Clinical Pathology</h3>
+                    <p>Comprehensive analysis of bodily fluids including blood, urine, and other samples to diagnose diseases.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Hematology</h3>
+                    <p>Specialized testing for blood disorders, complete blood counts, and coagulation studies.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Microbiology</h3>
+                    <p>Identification of infectious organisms through cultures, sensitivity testing, and molecular diagnostics.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Biochemistry</h3>
+                    <p>Analysis of chemical components in body fluids to assess organ function and metabolic processes.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Histopathology</h3>
+                    <p>Microscopic examination of tissue samples to detect abnormalities, including cancer diagnosis.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Immunology</h3>
+                    <p>Testing for immune system disorders, allergies, and autoimmune conditions.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Molecular Diagnostics</h3>
+                    <p>Advanced genetic and molecular testing for personalized medicine approaches.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Radiology</h3>
+                    <p>State-of-the-art imaging services including X-ray, ultrasound, and CT scans.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <h2>Our Commitment</h2>
+            <p>At Neuron Diagnostic, we believe that accurate diagnosis is the foundation of effective treatment. Our team of board-certified pathologists, radiologists, and skilled technicians work collaboratively to deliver timely, precise results that empower healthcare providers to make informed decisions. We are dedicated to maintaining the highest standards of quality while ensuring a compassionate patient experience from sample collection to result delivery.</p>
+            <p style="margin-top: 20px;">With multiple collection centers and a central laboratory equipped with cutting-edge technology, we serve hospitals, clinics, and individual patients across the region, contributing to better health outcomes through excellence in diagnostic medicine.</p>
+        </section>
+    </div>
+</body>
+</html>
