@@ -1,179 +1,177 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer - Neuron Diagnostic</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        .footer {
-            background: #022366;
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.4rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h3:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: white;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-links a {
-            color: #c5d0e8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .contact-info {
-            list-style: none;
-        }
-        
-        .contact-info li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-        
-        .contact-info i {
-            margin-top: 5px;
-            color: #c5d0e8;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #c5d0e8;
-            font-size: 0.9rem;
-        }
-        
-        .developer-credit {
-            margin-top: 15px;
-            font-size: 0.85rem;
-        }
-        
-        .developer-credit a {
-            color: #c5d0e8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .developer-credit a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>Neuron Diagnostic</h3>
-                    <p style="color: #c5d0e8; margin-bottom: 20px;">Your Health Our Priority. A modern pathology and healthcare center committed to precision, compassion, and innovation.</p>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Medical Drive, Health District, City 12345</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>(555) 123-4567</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>info@neurondiagnostic.com</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Blood Tests</a></li>
-                        <li><a href="#">Genetic Testing</a></li>
-                        <li><a href="#">Infectious Disease</a></li>
-                        <li><a href="#">Cancer Screening</a></li>
-                        <li><a href="#">Radiology</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Opening Hours</h3>
-                    <ul class="footer-links">
-                        <li>Monday - Friday: 7:00 AM - 8:00 PM</li>
-                        <li>Saturday: 8:00 AM - 4:00 PM</li>
-                        <li>Sunday: 9:00 AM - 1:00 PM</li>
-                        <li>Emergency: 24/7 Available</li>
-                    </ul>
-                </div>
+<style>
+.footer-nd {
+    background: #022366;
+    color: white;
+    padding: 60px 0 30px;
+    margin-top: 0;
+}
+
+.footer-nd-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-nd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-nd-column h3 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-nd-column h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: white;
+}
+
+.footer-nd-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nd-links li {
+    margin-bottom: 12px;
+}
+
+.footer-nd-links a {
+    color: #c5d0e8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nd-links a:hover {
+    color: white;
+}
+
+.footer-nd-contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nd-contact-info li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-nd-contact-info i {
+    margin-top: 5px;
+    color: #c5d0e8;
+    width: 16px;
+}
+
+.footer-nd-copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #c5d0e8;
+    font-size: 0.9rem;
+}
+
+.footer-nd-developer-credit {
+    margin-top: 15px;
+    font-size: 0.85rem;
+}
+
+.footer-nd-developer-credit a {
+    color: #c5d0e8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nd-developer-credit a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer-nd-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+</style>
+
+<footer class="footer-nd">
+    <div class="footer-nd-container">
+        <div class="footer-nd-grid">
+            <div class="footer-nd-column">
+                <h3>Neuron Diagnostic</h3>
+                <p style="color: #c5d0e8; margin-bottom: 20px;">Your Health Our Priority. A modern pathology and healthcare center committed to precision, compassion, and innovation.</p>
+                <ul class="footer-nd-contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>South Gazinagar, Samserganj, Dhulliyan, Murshidabad, W.B – 742202</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+91 8918459671</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>support@neurondiagnostic.in</span>
+                    </li>
+                </ul>
             </div>
-            <div class="copyright">
-                &copy; 2023 Neuron Diagnostic. All rights reserved.
-                <div class="developer-credit">
-                    Designed & Developed by <a href="https://axomtimes.in" target="_blank">Rakibul Ariyan</a>
-                </div>
+            <div class="footer-nd-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-nd-links">
+                    <li><a href=https://neurondiagnostic.in/">Home</a></li>
+                    <li><a href=https://neurondiagnostic.in/about-us/">About Us</a></li>
+									<li><a href="/contact">Contact Us</a></li>
+                    <li><a href=https://neurondiagnostic.in/individual-service/>Services</a></li>
+											<li><a href=https://neurondiagnostic.in/faqs/>FAQ's</a></li>
+	<li><a href=https://neurondiagnostic.in/career/>Career</a></li>
+                    <li><a href=https://neurondiagnostic.in/disclaimer/>Disclaimer</a></li>
+                    <li><a href=https://neurondiagnostic.in/privacy-policy/>Privacy Policy</a></li>
+											<li><a href=https://neurondiagnostic.in/refund-policy/>Refund Policy</a></li>
+											<li><a href=https://neurondiagnostic.in/terms-of-service//>Terms Of service</a></li>
+                </ul>
+            </div>
+            <div class="footer-nd-column">
+                <h3>Our Services</h3>
+                <ul class="footer-nd-links">
+                    <li><a href=#>Blood Tests</a></li>
+                    <li><a href=#>Genetic Testing</a></li>
+                    <li><a href=#>Infectious Disease</a></li>
+                    <li><a href=#>Cancer Screening</a></li>
+                    <li><a href=#>Radiology</a></li>
+									<li><a href=#>OPD</a></li>
+										<li><a href=#>gynecologist</a></li>
+                </ul>
+            </div>
+            <div class="footer-nd-column">
+                <h3>Opening Hours</h3>
+                <ul class="footer-nd-links">
+                    <li>Monday - Friday: 7:00 AM - 8:00 PM</li>
+                    <li>Saturday: 8:00 AM - 4:00 PM</li>
+                    <li>Sunday: 9:00 AM - 1:00 PM</li>
+                    <li>Emergency: 24/7 Available</li>
+                </ul>
             </div>
         </div>
-    </footer>
-</body>
-</html>
+        <div class="footer-nd-copyright">
+    &copy; <span id="current-year"></span> Neuron Diagnostic. All rights reserved.
+    <div class="footer-nd-developer-credit">
+        Designed & Developed by <a href="https://axomtimes.in" target="_blank">Rakibul Ariyan</a>
+    </div>
+</div>
+
+<script>
+document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
